@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字打乱顺序与摩斯密码翻译</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>文字打乱顺序与摩斯密码翻译</h1>
+
+        <!-- 打乱顺序功能 -->
+        <div class="section">
+            <h2>打乱文字顺序</h2>
+            <input type="text" id="inputText" placeholder="请输入文字">
+            <button id="shuffleButton">打乱顺序</button>
+            <p id="outputText"></p>
+        </div>
+
+        <!-- 文字转摩斯密码功能 -->
+        <div class="section">
+            <h2>文字转摩斯密码</h2>
+            <input type="text" id="morseInput" placeholder="请输入文字">
+            <button id="translateButton">翻译成摩斯密码</button>
+            <p id="morseOutput"></p>
+        </div>
+
+        <!-- 摩斯密码转文字功能 -->
+        <div class="section">
+            <h2>摩斯密码转文字</h2>
+            <input type="text" id="morseToTextInput" placeholder="请输入摩斯密码">
+            <button id="morseToTextButton">翻译成文字</button>
+            <p id="morseToTextOutput"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
