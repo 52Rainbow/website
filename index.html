@@ -3,44 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文字打乱顺序与摩斯密码翻译</title>
+    <title>多功能文字与图片工具</title>
     <link rel="stylesheet" href="styles.css">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?0710a4b15823477deb3589c445d2336c";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+    <!-- 百度统计代码 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?925ff791ef5ef143d3a75f2c83f4ccee";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>文字打乱顺序与摩斯密码翻译</h1>
+        <h1>多功能文字与图片工具</h1>
 
-        <!-- 打乱顺序功能 -->
+        <!-- 文字处理分区 -->
         <div class="section">
-            <h2>打乱文字顺序</h2>
-            <input type="text" id="inputText" placeholder="请输入文字">
-            <button id="shuffleButton">打乱顺序</button>
-            <p id="outputText"></p>
+            <h2>文字处理</h2>
+            <!-- 原有文字处理功能 -->
+            <!-- ... -->
         </div>
 
-        <!-- 文字转摩斯密码功能 -->
+        <!-- 新增图片处理分区 -->
         <div class="section">
-            <h2>文字转摩斯密码</h2>
-            <input type="text" id="morseInput" placeholder="请输入文字">
-            <button id="translateButton">翻译成摩斯密码</button>
-            <p id="morseOutput"></p>
-        </div>
+            <h2>图片处理</h2>
+            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+            <button id="uploadButton">上传图片</button>
+            <p>图片大小限制：10MB</p>
+            <div id="imagePreviewContainer" style="display: none;">
+                <img id="imagePreview" src="#" alt="图片预览" style="max-width: 100%; height: auto;">
+            </div>
 
-        <!-- 摩斯密码转文字功能 -->
-        <div class="section">
-            <h2>摩斯密码转文字</h2>
-            <input type="text" id="morseToTextInput" placeholder="请输入摩斯密码">
-            <button id="morseToTextButton">翻译成文字</button>
-            <p id="morseToTextOutput"></p>
+            <!-- 图片处理功能按钮 -->
+            <div class="image-tools">
+                <button id="compressButton">压缩图片</button>
+                <button id="cropButton">裁剪图片</button>
+                <button id="rotateButton">旋转图片</button>
+                <button id="grayscaleButton">灰度化</button>
+                <button id="brightnessButton">调整亮度</button>
+                <button id="contrastButton">调整对比度</button>
+                <button id="filterButton">应用滤镜</button>
+                <button id="watermarkButton">添加水印</button>
+                <button id="convertFormatButton">转换格式</button>
+                <button id="resizeButton">调整尺寸</button>
+                <button id="flipButton">翻转图片</button>
+                <button id="addBorderButton">添加边框</button>
+                <button id="mosaicButton">添加马赛克</button>
+                <button id="downloadButton">下载图片</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
