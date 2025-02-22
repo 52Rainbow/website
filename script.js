@@ -328,4 +328,42 @@ document.getElementById('contrastButton').addEventListener('click', function() {
     if (!currentImage) return alert('请先上传图片！');
     const contrast = prompt('请输入对比度值（0 到 200）：');
     if (contrast === null || isNaN(contrast)) return;
-    const canvas = document.createElement
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = currentImage.width;
+    canvas.height = currentImage.height;
+    ctx.drawImage(currentImage, 0, 0);
+    ctx.filter = `contrast(${contrast}%)`;
+    ctx.drawImage(currentImage, 0, 0);
+    currentImage.src = canvas.toDataURL();
+    document.getElementById('imagePreview').src = canvas.toDataURL();
+});
+
+// 应用滤镜
+document.getElementById('filterButton').addEventListener('click', function() {
+    if (!currentImage) return alert('请先上传图片！');
+    const filter = prompt('请输入滤镜（如：grayscale(100%)、sepia(100%)、blur(5px)）：');
+    if (!filter) return;
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = currentImage.width;
+    canvas.height = currentImage.height;
+    ctx.drawImage(currentImage, 0, 0);
+    ctx.filter = filter;
+    ctx.drawImage(currentImage, 0, 0);
+    currentImage.src = canvas.toDataURL();
+    document.getElementById('imagePreview').src = canvas.toDataURL();
+});
+
+// 添加水印
+document.getElementById('watermarkButton').addEventListener('click', function() {
+    if (!currentImage) return alert('请先上传图片！');
+    const text = prompt('请输入水印文字：');
+    if (!text) return;
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = currentImage.width;
+    canvas.height = currentImage.height;
+    ctx.drawImage(currentImage, 0, 0);
+    ctx.font = '30px Arial';
+    ctx.fillStyle = 'rgba(255, 255, 255,
