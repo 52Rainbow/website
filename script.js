@@ -14,15 +14,10 @@ function shuffleString(str) {
     return arr.join('');
 }
 
-// 摩斯密码映射表（仅支持ASCII字符）
+// 摩斯密码映射表（仅支持数字和基本符号）
 const morseCode = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
-    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
-    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
-    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-    'Y': '-.--', 'Z': '--..',
-    '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
-    '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----',
+    '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+    '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
     ' ': '/'
 };
 
@@ -41,8 +36,8 @@ document.getElementById('translateButton').addEventListener('click', function() 
 
 function textToMorse(text) {
     return text.split('').map(char => {
-        // 如果是中文字符，转换为Unicode编码
-        if (/[\u4e00-\u9fa5]/.test(char)) {
+        // 如果是非ASCII字符（如中文或符号），转换为Unicode编码
+        if (char.charCodeAt(0) > 127 || !morseCode[char.toUpperCase()]) {
             const unicode = char.charCodeAt(0).toString(10); // 获取Unicode编码（十进制）
             return unicode.split('').map(digit => morseCode[digit] || '').join(' ');
         }
@@ -77,7 +72,7 @@ function morseToText(morse) {
             result += ' ';
         }
 
-        // 如果unicodeBuffer长度达到5（假设Unicode编码为5位数字），则转换为中文字符
+        // 如果unicodeBuffer长度达到5（假设Unicode编码为5位数字），则转换为字符
         if (unicodeBuffer.length === 5) {
             const unicode = parseInt(unicodeBuffer, 10);
             result += String.fromCharCode(unicode);
