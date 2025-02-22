@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>多功能文字工具</title>
+    <title>文字打乱顺序与摩斯密码翻译</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>多功能文字工具</h1>
+        <h1>文字打乱顺序与摩斯密码翻译</h1>
 
         <!-- 打乱顺序功能 -->
         <div class="section">
@@ -32,154 +32,6 @@
             <input type="text" id="morseToTextInput" placeholder="请输入摩斯密码">
             <button id="morseToTextButton">翻译成文字</button>
             <p id="morseToTextOutput"></p>
-        </div>
-
-        <!-- 新增功能区域 -->
-        <div class="section">
-            <h2>字数统计</h2>
-            <input type="text" id="countInput" placeholder="请输入文字">
-            <button id="countButton">统计字数</button>
-            <p id="countOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>大小写转换</h2>
-            <input type="text" id="caseInput" placeholder="请输入文字">
-            <button id="toUpperButton">转换为大写</button>
-            <button id="toLowerButton">转换为小写</button>
-            <p id="caseOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本反转</h2>
-            <input type="text" id="reverseInput" placeholder="请输入文字">
-            <button id="reverseButton">反转文本</button>
-            <p id="reverseOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>随机密码生成器</h2>
-            <button id="generatePasswordButton">生成随机密码</button>
-            <p id="passwordOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>Base64 编码/解码</h2>
-            <input type="text" id="base64Input" placeholder="请输入文字">
-            <button id="encodeBase64Button">编码</button>
-            <button id="decodeBase64Button">解码</button>
-            <p id="base64Output"></p>
-        </div>
-
-        <div class="section">
-            <h2>URL 编码/解码</h2>
-            <input type="text" id="urlInput" placeholder="请输入文字">
-            <button id="encodeUrlButton">编码</button>
-            <button id="decodeUrlButton">解码</button>
-            <p id="urlOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本去空格</h2>
-            <input type="text" id="trimInput" placeholder="请输入文字">
-            <button id="trimButton">去除空格</button>
-            <p id="trimOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本替换</h2>
-            <input type="text" id="replaceInput" placeholder="请输入文字">
-            <input type="text" id="replaceFrom" placeholder="要替换的字符">
-            <input type="text" id="replaceTo" placeholder="替换为">
-            <button id="replaceButton">替换</button>
-            <p id="replaceOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本加密/解密</h2>
-            <input type="text" id="encryptInput" placeholder="请输入文字">
-            <button id="encryptButton">加密</button>
-            <button id="decryptButton">解密</button>
-            <p id="encryptOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本朗读</h2>
-            <input type="text" id="speakInput" placeholder="请输入文字">
-            <button id="speakButton">朗读</button>
-        </div>
-
-        <!-- 新增功能区域（第二部分） -->
-        <div class="section">
-            <h2>文本分行显示</h2>
-            <input type="text" id="splitInput" placeholder="请输入文字">
-            <input type="text" id="splitDelimiter" placeholder="分隔符（如逗号）">
-            <button id="splitButton">分行显示</button>
-            <p id="splitOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本排序</h2>
-            <input type="text" id="sortInput" placeholder="请输入文字">
-            <button id="sortButton">排序</button>
-            <p id="sortOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本去重</h2>
-            <input type="text" id="deduplicateInput" placeholder="请输入文字">
-            <button id="deduplicateButton">去重</button>
-            <p id="deduplicateOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本统计</h2>
-            <input type="text" id="statInput" placeholder="请输入文字">
-            <button id="statButton">统计字符</button>
-            <p id="statOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本提取数字</h2>
-            <input type="text" id="extractNumbersInput" placeholder="请输入文字">
-            <button id="extractNumbersButton">提取数字</button>
-            <p id="extractNumbersOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本提取字母</h2>
-            <input type="text" id="extractLettersInput" placeholder="请输入文字">
-            <button id="extractLettersButton">提取字母</button>
-            <p id="extractLettersOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本提取特殊字符</h2>
-            <input type="text" id="extractSpecialCharsInput" placeholder="请输入文字">
-            <button id="extractSpecialCharsButton">提取特殊字符</button>
-            <p id="extractSpecialCharsOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本首字母大写</h2>
-            <input type="text" id="capitalizeInput" placeholder="请输入文字">
-            <button id="capitalizeButton">首字母大写</button>
-            <p id="capitalizeOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本倒序单词</h2>
-            <input type="text" id="reverseWordsInput" placeholder="请输入文字">
-            <button id="reverseWordsButton">倒序单词</button>
-            <p id="reverseWordsOutput"></p>
-        </div>
-
-        <div class="section">
-            <h2>文本比较</h2>
-            <input type="text" id="compareInput1" placeholder="请输入第一段文字">
-            <input type="text" id="compareInput2" placeholder="请输入第二段文字">
-            <button id="compareButton">比较</button>
-            <p id="compareOutput"></p>
         </div>
     </div>
     <script src="script.js"></script>
